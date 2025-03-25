@@ -3,8 +3,10 @@
 
 int main()
 {
+    //Sensores
     DigitalIn gasDetector(D2);
     DigitalIn overTempDetector(D3);
+    //Teclas de codigo
     DigitalIn aButton(D4);
     DigitalIn bButton(D5);
     DigitalIn cButton(D6);
@@ -31,6 +33,7 @@ int main()
 
         alarmLed = alarmState;
 
+        //codigo [a, b, c, d]<-[1, 1, 0, 0]
         if ( aButton && bButton && !cButton && !dButton) {
             alarmState = OFF;
         }
